@@ -10,17 +10,49 @@ To install with the package manager, run:
 
     $ poetry add giant-plugins
 
-You should then add `"giant_contact"` to the `INSTALLED_APPS` in `base.py`.  
+You should then add `"giant_plugins"` to the `INSTALLED_APPS` in `base.py`.  
 
 
 ## Configuration
 
 This application exposes the following settings:
 
+`REDACTOR_OPTIONS` which allows the user to configure a set of options for the redactor. For example the settings below will give you a basic setup,
+
+```
+REDACTOR_OPTIONS = {
+    "lang": "en",
+    "minHeight": "250",
+    "buttons": [
+        "html",
+        "|",
+        "formatting",
+        "|",
+        "bold",
+        "italic",
+        "deleted",
+        "underline",
+        "alignment",
+        "|",
+        "unorderedlist",
+        "orderedlist",
+        "|",
+        "link",
+    ],
+    "formattingTags": ["h1", "h2", "h3", "h4", "p"],
+    "imageResizable": False,
+    "imagePosition": False,
+    "formattingAdd": [{"tag": "p", "title": "Intro Paragraph", "class": "intro"}],
+}
+```
+You will also need to add your redactor folder into `static/vendor`
+
+
  ## Preparing for release
  
  In order to prep the package for a new release on TestPyPi and PyPi there is one key thing that you need to do. You need to update the version number in the `pyproject.toml`.
  This is so that the package can be published without running into version number conflicts. The version numbering must also follow the Semantic Version rules which can be found here https://semver.org/.
+ 
  
  ## Publishing
  
