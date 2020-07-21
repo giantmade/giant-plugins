@@ -9,6 +9,7 @@ class PageCardBlock(CMSPlugin):
     """
     Model for the page card block plugin
     """
+
     pass
 
 

@@ -7,6 +7,7 @@ class PullQuoteBlock(CMSPlugin):
     """
     Block for the quotes to sit in
     """
+
     pass
 
 
@@ -14,6 +15,7 @@ class PullQuote(CMSPlugin):
     """
     Model for a pull quote plugin
     """
+
     quote = models.TextField()
     caption = models.CharField(max_length=255, blank=True)
 
