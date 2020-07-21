@@ -2,7 +2,8 @@
 
 A re-usable package which can be used in any project that requires a base set of plugins. 
 
-This will include a small set of plugins that are used in a large number of projects, but will not necessarily cover the full requirements.
+This will include a small set of plugins that are used in a large number of projects, but will not necessarily cover the full requirements. It will also provide a RichText field which can be used in other areas of the project
+The RichText field uses ![summernote](https://github.com/summernote/summernote/) for styling the WYSIWYG widget.
 
 ## Installation
 
@@ -10,17 +11,50 @@ To install with the package manager, run:
 
     $ poetry add giant-plugins
 
-You should then add `"giant_contact"` to the `INSTALLED_APPS` in `base.py`.  
+You should then add `"giant_plugins"` to the `INSTALLED_APPS` in `base.py`.  
 
+In order to run `django-admin` commands you will need to set the `DJANGO_SETTINGS_MODULE` by running
+
+    $ export DJANGO_SETTINGS_MODULE=settings
 
 ## Configuration
 
 This application exposes the following settings:
 
+`SUMMERNOTE_CONFIG` which allows the user to configure a set of options for the redactor. For example the settings below will give you a basic setup,
+
+```
+SUMMERNOTE_CONFIG = (
+    {
+        "iframe": True,
+        "summernote": {
+            "airMode": False,
+            # Change editor size
+            "width": "100%",
+            "height": "480",
+            "lang": None,
+            "toolbar": [
+                ["style", ["style"]],
+                ["font", ["bold", "underline", "clear"]],
+                ["fontname", ["fontname"]],
+                ["color", ["color"]],
+                ["para", ["ul", "ol", "paragraph"]],
+                ["table", ["table"]],
+                ["insert", ["link", "picture", "video"]],
+                ["view", ["fullscreen", "codeview", "help"]],
+            ],
+        },
+    },
+)
+
+```
+
+
  ## Preparing for release
  
  In order to prep the package for a new release on TestPyPi and PyPi there is one key thing that you need to do. You need to update the version number in the `pyproject.toml`.
  This is so that the package can be published without running into version number conflicts. The version numbering must also follow the Semantic Version rules which can be found here https://semver.org/.
+ 
  
  ## Publishing
  
