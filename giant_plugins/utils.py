@@ -16,17 +16,17 @@ class LazyEncoder(DjangoJSONEncoder):
     def default(self, obj):
         if isinstance(obj, Promise):
             return force_text(obj)
-        return super(LazyEncoder, self).default(obj)
+        return super().default(obj)
 
 
-class RedactorWidget(Textarea):
+class SummernoteWidget(Textarea):
     """
-    Used to render redactor into the backend of the site.
+    Used to render WYSIWYG into the backend of the site.
     """
 
     def __init__(self, attrs=None, editor_options=None):
         super().__init__(attrs)
-        self.editor_options = editor_options or settings.REDACTOR_OPTIONS
+        self.editor_options = editor_options or settings.SUMMERNOTE_CONFIG
 
     def render(self, name, value, attrs=None, renderer=None):
         if value is None:
@@ -34,7 +34,7 @@ class RedactorWidget(Textarea):
         attrs["data-config"] = self.js_config
         cls = attrs.get("class", "")
         attrs["class"] = (
-            cls + " uninitialised redactor-init" if cls else "uninitialised redactor-init"
+            cls + " uninitialised wysiwyg-init" if cls else "uninitialised wysiwyg-init"
         )
         final_attrs = self.build_attrs(self.attrs, attrs, name=name)
         return mark_safe(f"<textarea{flatatt(final_attrs)}>\r\n{force_text(value)}</textarea>")
@@ -61,24 +61,21 @@ class RedactorWidget(Textarea):
         """
         Returns media files for django to output
         """
-        css = {"all": ("vendor/redactor/redactor.min.css", "vendor/redactor/django-admin.css")}
-        js = ("vendor/redactor/redactor.min.js", "vendor/redactor/init.js")
-
-        for plugin in self.editor_options.get("plugins", []):
-            js += (f"vendor/redactor/plugins/{plugin}/{plugin}.min.js",)
+        css = {"all": ("vendor/summernote/summernote-lite.min.css",)}
+        js = ("vendor/summernote/summernote-lite.min.js", "vendor/summernote/init.js")
 
         return Media(css=css, js=js)
 
 
 class RichTextField(models.TextField):
     """
-    Rich text field for use with Redactor
+    Override the default widget for Textfield to use Summernote WYSIWYG
     """
 
     def formfield(self, **kwargs):
-        defaults = {"widget": RedactorWidget}
+        defaults = {"widget": SummernoteWidget}
         defaults.update(kwargs)
         return super().formfield(**defaults)
 
 
-options.FORMFIELD_FOR_DBFIELD_DEFAULTS[RichTextField] = {"widget": RedactorWidget}
+options.FORMFIELD_FOR_DBFIELD_DEFAULTS[RichTextField] = {"widget": SummernoteWidget}
