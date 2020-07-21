@@ -1,2 +1,0 @@
-- Add tests for plugins
-- Add actions once tests are written
