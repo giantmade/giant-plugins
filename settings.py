@@ -11,7 +11,6 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "filer",
     "mptt",
-    "django_summernote",
     "djangocms_admin_style",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -46,3 +45,25 @@ LANGUAGE_CODE = 'en-gb'
 LANGUAGES = [
     ('en-gb', 'English'),
 ]
+SUMMERNOTE_CONFIG = (
+    {
+        "iframe": True,
+        "summernote": {
+            "airMode": False,
+            # Change editor size
+            "width": "100%",
+            "height": "480",
+            "lang": None,
+            "toolbar": [
+                ["style", ["style"]],
+                ["font", ["bold", "underline", "clear"]],
+                ["fontname", ["fontname"]],
+                ["color", ["color"]],
+                ["para", ["ul", "ol", "paragraph"]],
+                ["table", ["table"]],
+                ["insert", ["link", "picture", "video"]],
+                ["view", ["fullscreen", "codeview", "help"]],
+            ],
+        },
+    },
+)

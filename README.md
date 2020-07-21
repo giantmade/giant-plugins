@@ -3,6 +3,7 @@
 A re-usable package which can be used in any project that requires a base set of plugins. 
 
 This will include a small set of plugins that are used in a large number of projects, but will not necessarily cover the full requirements. It will also provide a RichText field which can be used in other areas of the project
+The RichText field uses ![summernote](https://github.com/summernote/summernote/) for styling the WYSIWYG widget.
 
 ## Installation
 
@@ -42,7 +43,7 @@ SUMMERNOTE_CONFIG = (
         },
     },
 )
-}
+
 ```
 
 
