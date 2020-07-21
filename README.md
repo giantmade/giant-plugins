@@ -2,7 +2,7 @@
 
 A re-usable package which can be used in any project that requires a base set of plugins. 
 
-This will include a small set of plugins that are used in a large number of projects, but will not necessarily cover the full requirements.
+This will include a small set of plugins that are used in a large number of projects, but will not necessarily cover the full requirements. It will also provide a RichText field which can be used in other areas of the project
 
 ## Installation
 
@@ -17,35 +17,33 @@ You should then add `"giant_plugins"` to the `INSTALLED_APPS` in `base.py`.
 
 This application exposes the following settings:
 
-`REDACTOR_OPTIONS` which allows the user to configure a set of options for the redactor. For example the settings below will give you a basic setup,
+`SUMMERNOTE_CONFIG` which allows the user to configure a set of options for the redactor. For example the settings below will give you a basic setup,
 
 ```
-REDACTOR_OPTIONS = {
-    "lang": "en",
-    "minHeight": "250",
-    "buttons": [
-        "html",
-        "|",
-        "formatting",
-        "|",
-        "bold",
-        "italic",
-        "deleted",
-        "underline",
-        "alignment",
-        "|",
-        "unorderedlist",
-        "orderedlist",
-        "|",
-        "link",
-    ],
-    "formattingTags": ["h1", "h2", "h3", "h4", "p"],
-    "imageResizable": False,
-    "imagePosition": False,
-    "formattingAdd": [{"tag": "p", "title": "Intro Paragraph", "class": "intro"}],
+SUMMERNOTE_CONFIG = (
+    {
+        "iframe": True,
+        "summernote": {
+            "airMode": False,
+            # Change editor size
+            "width": "100%",
+            "height": "480",
+            "lang": None,
+            "toolbar": [
+                ["style", ["style"]],
+                ["font", ["bold", "underline", "clear"]],
+                ["fontname", ["fontname"]],
+                ["color", ["color"]],
+                ["para", ["ul", "ol", "paragraph"]],
+                ["table", ["table"]],
+                ["insert", ["link", "picture", "video"]],
+                ["view", ["fullscreen", "codeview", "help"]],
+            ],
+        },
+    },
+)
 }
 ```
-You will also need to add your redactor folder into `static/vendor`
 
 
  ## Preparing for release
