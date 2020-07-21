@@ -13,6 +13,9 @@ To install with the package manager, run:
 
 You should then add `"giant_plugins"` to the `INSTALLED_APPS` in `base.py`.  
 
+In order to run `django-admin` commands you will need to set the `DJANGO_SETTINGS_MODULE` by running
+
+    $ export DJANGO_SETTINGS_MODULE=settings
 
 ## Configuration
 
