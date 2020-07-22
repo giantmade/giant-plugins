@@ -1,4 +1,4 @@
-if(typeof $ === 'undefined') {
+if(django) {
     var $ = django.jQuery;
 }
 function initialiseWYSIWYG(){
