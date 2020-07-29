@@ -1,6 +1,17 @@
-# flake8: noqa
-from .content_width_image.cms_plugins import *
-from .content_width_video.cms_plugins import *
-from .page_card.cms_plugins import *
-from .pullquote.cms_plugins import *
-from .rich_text.cms_plugins import *
+from django.conf import settings
+from django.utils.module_loading import import_string
+
+imports_list = getattr(
+    settings,
+    "GIANT_PLUGINS_LIST",
+    [
+        "content_width_video",
+        "content_width_image",
+        "page_card",
+        "pullquote",
+        "rich_text",
+    ],
+)
+
+for plugin in imports_list:
+    import_string(f"plugins.{plugin}.cms_plugins.__all__")
