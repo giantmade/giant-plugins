@@ -2,7 +2,7 @@ from cms.plugin_pool import CMSPluginBase, plugin_pool
 
 from . import models
 
-_all__ = ["ContentWidthImagePlugin"]
+__all__ = ["ContentWidthImagePlugin"]
 
 
 @plugin_pool.register_plugin
