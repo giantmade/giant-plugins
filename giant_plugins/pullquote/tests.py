@@ -28,6 +28,7 @@ class TestPageCardModel:
     """
     Test case for the pullquote Model
     """
+
     def test_str(self):
         obj = models.PullQuote.objects.create()
         assert str(obj) == "Pull quote 1"

@@ -28,6 +28,7 @@ class TestPageCardModel:
     """
     Test case for the PageCard Model
     """
+
     def test_str(self):
         obj = models.PageCard.objects.create()
         assert str(obj) == "Page Card #1"

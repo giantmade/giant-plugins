@@ -21,6 +21,7 @@ class TestPageCardModel:
     """
     Test case for the Rich Text Model
     """
+
     @pytest.fixture
     def plugin_instance(self):
         return models.RichText(

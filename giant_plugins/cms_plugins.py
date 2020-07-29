@@ -1,6 +1,16 @@
-# flake8: noqa
-from .content_width_image.cms_plugins import *
-from .content_width_video.cms_plugins import *
-from .page_card.cms_plugins import *
-from .pullquote.cms_plugins import *
-from .rich_text.cms_plugins import *
+from django.utils.module_loading import import_string
+from cms.exceptions import PluginAlreadyRegistered
+
+import_list = [
+    "content_width_video",
+    "content_width_image",
+    "page_card",
+    "pullquote",
+    "rich_text",
+]
+
+for plugin in import_list:
+    try:
+        import_string(f"giant_plugins.{plugin}.cms_plugins.__all__")
+    except PluginAlreadyRegistered:
+        pass

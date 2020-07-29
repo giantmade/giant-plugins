@@ -3,7 +3,7 @@ from cms.plugin_pool import plugin_pool
 
 from . import models
 
-__all_ = ["PullQuotePlugin", "PullQuoteBlockPlugin"]
+__all__ = ["PullQuotePlugin", "PullQuoteBlockPlugin"]
 
 
 @plugin_pool.register_plugin
