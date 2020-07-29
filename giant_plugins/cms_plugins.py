@@ -14,4 +14,4 @@ imports_list = getattr(
 )
 
 for plugin in imports_list:
-    import_string(f"plugins.{plugin}.cms_plugins.__all__")
+    import_string(f"giant_plugins.{plugin}.cms_plugins.__all__")
