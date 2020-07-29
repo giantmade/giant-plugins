@@ -21,6 +21,7 @@ class TestContentWidthVideoModel:
     """
     Test case for the ContentWidthVideo Model
     """
+
     def test_str(self):
         obj = models.ContentWidthVideo.objects.create()
         assert str(obj) == "Content Width Video 1"

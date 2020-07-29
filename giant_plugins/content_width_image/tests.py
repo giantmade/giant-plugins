@@ -21,6 +21,7 @@ class TestContentWidthImageModel:
     """
     Test case for the ContentWidthImage Model
     """
+
     def test_str(self):
         obj = models.ContentWidthImage.objects.create()
         assert str(obj) == "Content Width Image 1"
