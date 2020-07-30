@@ -32,7 +32,7 @@ class HeroImage(CMSPlugin, URLMixin):
         help_text="We recommend selecting the aspect ratio that most closely matches the image that you are using."
                   " We will use this to aid with the image position.",
     )
-    cta_text = models.CharField(max_length=255)
+    cta_text = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         """
