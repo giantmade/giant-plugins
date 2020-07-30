@@ -7,6 +7,7 @@ import_list = [
     "page_card",
     "pullquote",
     "rich_text",
+    "hero_image",
 ]
 
 for plugin in import_list:
