@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.translation import ugettext as _
+from filer.fields.image import FilerImageField
 
 from cms.models import CMSPlugin
 
@@ -18,6 +20,14 @@ class PullQuote(CMSPlugin):
 
     quote = models.TextField()
     caption = models.CharField(max_length=255, blank=True)
+    image = FilerImageField(
+        related_name="+",
+        on_delete=models.SET_NULL,
+        null=True,
+        help_text=_(
+            "Here you can set an optional image to be displayed with the quote"
+        ),
+    )
 
     def __str__(self):
         """
