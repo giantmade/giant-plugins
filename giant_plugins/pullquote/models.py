@@ -20,6 +20,13 @@ class PullQuote(CMSPlugin):
 
     quote = models.TextField()
     caption = models.CharField(max_length=255, blank=True)
+    image = FilerImageField(
+        related_name="+",
+        blank=True,
+        null=True,
+        help_text="Choose an optional image",
+        on_delete=models.CASCADE,
+    )
 
     def __str__(self):
         """
