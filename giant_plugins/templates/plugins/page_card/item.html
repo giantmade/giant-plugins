@@ -9,7 +9,8 @@
             <p class="category">{{ instance.category }}</p>
         {% endif %}
         <h3>{{ instance.title }}</h3>
-
-        <p>{{ instance.summary }}</p>
+        {% if instance.summary %}
+            <p>{{ instance.summary }}</p>
+        {% endif %}
     </div>
 </a>
