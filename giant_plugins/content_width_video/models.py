@@ -12,8 +12,8 @@ class ContentWidthVideo(CMSPlugin, YoutubeURLMixin):
 
     image = FilerImageField(related_name="+", on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=128, blank=True)
-    alt_title = models.CharField(max_length=128, blank=True, default=title)
-    alt_text = models.CharField(max_length=128, blank=True, default=title)
+    alt_title = models.CharField(max_length=128, blank=True, null=True)
+    alt_text = models.CharField(max_length=128, blank=True, null=True)
     display_image = models.BooleanField(default=True)
 
     def __str__(self):
