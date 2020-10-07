@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "giant-plugins"
-version = "0.1.3.10"
+version = "0.1.3.11"
 description = "Adds a generic list of plugins for use within projects"
 authors = ["Will-Hoey <will.hoey@giantmade.com>"]
 license = "MIT"
