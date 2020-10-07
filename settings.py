@@ -74,7 +74,7 @@ SUMMERNOTE_CONFIG = (
                 ["table", ["table"]],
                 ["insert", ["link", "picture", "video"]],
                 ["view", ["fullscreen", "codeview", "help"]],
-                ["cleaner",["cleaner"]],
+                ["cleaner", ["cleaner"]],
             ],
         },
     },
