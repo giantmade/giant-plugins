@@ -1,4 +1,7 @@
 /* https://github.com/DiemenDesign/summernote-cleaner */
+if(django) {
+  var $ = django.jQuery;
+}
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
       define(['jquery'], factory);
