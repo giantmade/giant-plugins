@@ -64,7 +64,12 @@ class SummernoteWidget(Textarea):
         Returns media files for django to output
         """
         css = {"all": ("vendor/summernote/summernote.min.css",)}
-        js = ("vendor/summernote/summernote.min.js", "vendor/summernote/summernote-cleaner.js", "vendor/summernote/init.js")
+        js = (
+            "vendor/summernote/django-jquery.js",
+            "vendor/summernote/summernote.min.js",
+            "vendor/summernote/summernote-cleaner.js",
+            "vendor/summernote/init.js",
+        )
 
         return Media(css=css, js=js)
 
