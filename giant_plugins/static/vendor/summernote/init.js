@@ -1,3 +1,6 @@
+if (django) {
+    var $ = django.jQuery;
+}
 function initialiseWYSIWYG(){
     $('.wysiwyg-init.uninitialised').each(function(){
         var id = $(this).attr('id');
