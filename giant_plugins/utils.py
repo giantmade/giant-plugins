@@ -1,6 +1,8 @@
 """Contains classes which are required for some of the plugins"""
 import json
 
+from typing import Optional
+
 from django.conf import settings
 from django.contrib.admin import options
 from django.core.serializers.json import DjangoJSONEncoder
