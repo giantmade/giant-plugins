@@ -24,9 +24,13 @@ class SummernoteWidget(Textarea):
     Used to render WYSIWYG into the backend of the site.
     """
 
+    def get_setting(setting: str) -> Optional[object]:
+        """Return the provided setting, or None."""
+        return getattr(settings, setting, None)
+
     def __init__(self, attrs=None, editor_options=None):
         super().__init__(attrs)
-        self.editor_options = editor_options or settings.SUMMERNOTE_CONFIG or settings.WYSIWYG_CONFIG
+        self.editor_options = editor_options or get_setting("SUMMERNOTE_CONFIG") or get_setting("WYSIWYG_CONFIG")
 
     def render(self, name, value, attrs=None, renderer=None):
         if value is None:
