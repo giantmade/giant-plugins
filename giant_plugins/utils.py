@@ -26,7 +26,7 @@ class SummernoteWidget(Textarea):
 
     def __init__(self, attrs=None, editor_options=None):
         super().__init__(attrs)
-        self.editor_options = editor_options or settings.SUMMERNOTE_CONFIG
+        self.editor_options = editor_options or settings.SUMMERNOTE_CONFIG or settings.WYSIWYG_CONFIG
 
     def render(self, name, value, attrs=None, renderer=None):
         if value is None:
@@ -78,9 +78,9 @@ class RichTextField(models.TextField):
     """
 
     def formfield(self, **kwargs):
-        defaults = {"widget": SummernoteWidget}
+        defaults = {"widget": settings.WYSIWYG_WIDGET or SummernoteWidget}
         defaults.update(kwargs)
         return super().formfield(**defaults)
 
 
-options.FORMFIELD_FOR_DBFIELD_DEFAULTS[RichTextField] = {"widget": SummernoteWidget}
+options.FORMFIELD_FOR_DBFIELD_DEFAULTS[RichTextField] = {"widget": settings.WYSIWYG_WIDGET or SummernoteWidget}
