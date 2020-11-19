@@ -14,6 +14,11 @@ from django.utils.functional import Promise
 from django.utils.safestring import mark_safe
 
 
+def get_setting(setting: str) -> Optional[object]:
+    """Return the provided setting, or None."""
+    return getattr(settings, setting, None)
+
+
 class LazyEncoder(DjangoJSONEncoder):
     def default(self, obj):
         if isinstance(obj, Promise):
@@ -25,10 +30,6 @@ class SummernoteWidget(Textarea):
     """
     Used to render WYSIWYG into the backend of the site.
     """
-
-    def get_setting(setting: str) -> Optional[object]:
-        """Return the provided setting, or None."""
-        return getattr(settings, setting, None)
 
     def __init__(self, attrs=None, editor_options=None):
         super().__init__(attrs)
@@ -82,10 +83,6 @@ class RichTextField(models.TextField):
     """
     Override the default widget for Textfield to use Summernote WYSIWYG
     """
-
-    def get_setting(setting: str) -> Optional[object]:
-        """Return the provided setting, or None."""
-        return getattr(settings, setting, None)
 
     def formfield(self, **kwargs):
         defaults = {"widget": get_setting("WYSIWYG_WIDGET") or SummernoteWidget}
