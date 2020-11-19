@@ -1,6 +1,8 @@
 """Contains classes which are required for some of the plugins"""
 import json
 
+from typing import Optional
+
 from django.conf import settings
 from django.contrib.admin import options
 from django.core.serializers.json import DjangoJSONEncoder
@@ -10,6 +12,11 @@ from django.forms.utils import flatatt
 from django.utils.encoding import force_text
 from django.utils.functional import Promise
 from django.utils.safestring import mark_safe
+
+
+def get_setting(setting: str) -> Optional[object]:
+    """Return the provided setting, or None."""
+    return getattr(settings, setting, None)
 
 
 class LazyEncoder(DjangoJSONEncoder):
@@ -26,7 +33,7 @@ class SummernoteWidget(Textarea):
 
     def __init__(self, attrs=None, editor_options=None):
         super().__init__(attrs)
-        self.editor_options = editor_options or settings.SUMMERNOTE_CONFIG
+        self.editor_options = editor_options or get_setting("WYSIWYG_CONFIG") or get_setting("SUMMERNOTE_CONFIG") 
 
     def render(self, name, value, attrs=None, renderer=None):
         if value is None:
@@ -78,9 +85,9 @@ class RichTextField(models.TextField):
     """
 
     def formfield(self, **kwargs):
-        defaults = {"widget": SummernoteWidget}
+        defaults = {"widget": get_setting("WYSIWYG_WIDGET") or SummernoteWidget}
         defaults.update(kwargs)
         return super().formfield(**defaults)
 
 
-options.FORMFIELD_FOR_DBFIELD_DEFAULTS[RichTextField] = {"widget": SummernoteWidget}
+options.FORMFIELD_FOR_DBFIELD_DEFAULTS[RichTextField] = {"widget": get_setting("WYSIWYG_WIDGET") or SummernoteWidget}
