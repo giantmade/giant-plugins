@@ -83,6 +83,10 @@ class RichTextField(models.TextField):
     Override the default widget for Textfield to use Summernote WYSIWYG
     """
 
+    def get_setting(setting: str) -> Optional[object]:
+        """Return the provided setting, or None."""
+        return getattr(settings, setting, None)
+
     def formfield(self, **kwargs):
         defaults = {"widget": get_setting("WYSIWYG_WIDGET") or SummernoteWidget}
         defaults.update(kwargs)
