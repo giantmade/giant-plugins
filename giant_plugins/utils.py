@@ -82,9 +82,9 @@ class RichTextField(models.TextField):
     """
 
     def formfield(self, **kwargs):
-        defaults = {"widget": settings.WYSIWYG_WIDGET or SummernoteWidget}
+        defaults = {"widget": get_setting("WYSIWYG_WIDGET") or SummernoteWidget}
         defaults.update(kwargs)
         return super().formfield(**defaults)
 
 
-options.FORMFIELD_FOR_DBFIELD_DEFAULTS[RichTextField] = {"widget": settings.WYSIWYG_WIDGET or SummernoteWidget}
+options.FORMFIELD_FOR_DBFIELD_DEFAULTS[RichTextField] = {"widget": get_setting("WYSIWYG_WIDGET") or SummernoteWidget}
