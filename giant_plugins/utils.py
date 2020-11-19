@@ -30,7 +30,7 @@ class SummernoteWidget(Textarea):
 
     def __init__(self, attrs=None, editor_options=None):
         super().__init__(attrs)
-        self.editor_options = editor_options or get_setting("SUMMERNOTE_CONFIG") or get_setting("WYSIWYG_CONFIG")
+        self.editor_options = editor_options or get_setting("WYSIWYG_CONFIG") or get_setting("SUMMERNOTE_CONFIG") 
 
     def render(self, name, value, attrs=None, renderer=None):
         if value is None:
