@@ -2,10 +2,10 @@ from django.db import models
 
 from cms.models import CMSPlugin
 from filer.fields.image import FilerImageField
-from mixins.models import YoutubeURLMixin
+from mixins.models import VideoURLMixin
 
 
-class ContentWidthVideo(CMSPlugin, YoutubeURLMixin):
+class ContentWidthVideo(CMSPlugin, VideoURLMixin):
     """
     Represents a content width video object
     """

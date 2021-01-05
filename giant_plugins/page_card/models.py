@@ -10,7 +10,17 @@ class PageCardBlock(CMSPlugin):
     Model for the page card block plugin
     """
 
-    pass
+    LAYOUT_STACKED = "stacked"
+    LAYOUT_LEFT_RIGHT = "left_right"
+    LAYOUT_CHOICES = ((LAYOUT_STACKED, "Stacked"), (LAYOUT_LEFT_RIGHT, "Left/Right"))
+
+    layout = models.CharField(max_length=255, default=LAYOUT_LEFT_RIGHT)
+
+    def __str__(self):
+        """
+        String representation of the object
+        """
+        return f"Page card container {self.pk}"
 
 
 class PageCard(CMSPlugin, URLMixin):
@@ -19,7 +29,9 @@ class PageCard(CMSPlugin, URLMixin):
     """
 
     title = models.CharField(max_length=255)
-    summary = models.CharField(max_length=140, blank=True, help_text="Limited to 140 characters")
+    summary = models.CharField(
+        max_length=140, blank=True, help_text="Limited to 140 characters"
+    )
     image = FilerImageField(related_name="+", on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
