@@ -14,7 +14,7 @@ class PageCardBlock(CMSPlugin):
     LAYOUT_LEFT_RIGHT = "left_right"
     LAYOUT_CHOICES = ((LAYOUT_STACKED, "Stacked"), (LAYOUT_LEFT_RIGHT, "Left/Right"))
 
-    layout = models.CharField(max_length=255, default=LAYOUT_LEFT_RIGHT)
+    layout = models.CharField(max_length=255, choices=LAYOUT_CHOICES, default=LAYOUT_LEFT_RIGHT)
 
     def __str__(self):
         """
