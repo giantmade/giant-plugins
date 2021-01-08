@@ -28,5 +28,4 @@ class PullQuotePlugin(CMSPluginBase):
     model = models.PullQuote
     name = "Pull Quote"
     render_template = "plugins/pullquote/item.html"
-    require_parent = True
-    parent_class = ["PullQuoteBlockPlugin"]
+
