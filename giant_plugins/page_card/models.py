@@ -3,6 +3,7 @@ from django.db import models
 from cms.models import CMSPlugin
 from filer.fields.image import FilerImageField
 from mixins.models import URLMixin
+from giant_plugins.utils import RichTextField
 
 
 class PageCardBlock(CMSPlugin):
@@ -15,6 +16,8 @@ class PageCardBlock(CMSPlugin):
     LAYOUT_CHOICES = ((LAYOUT_STACKED, "Stacked"), (LAYOUT_LEFT_RIGHT, "Left/Right"))
 
     layout = models.CharField(max_length=255, choices=LAYOUT_CHOICES, default=LAYOUT_LEFT_RIGHT)
+
+    title = RichTextField(blank=True)
 
     def __str__(self):
         """
