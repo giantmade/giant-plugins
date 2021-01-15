@@ -1,4 +1,4 @@
-from cms.plugin_pool import CMSPluginBase
+from cms.plugin_base import CMSPluginBase
 from django.utils.module_loading import import_string
 
 from django.conf import settings
