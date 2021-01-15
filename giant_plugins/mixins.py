@@ -10,11 +10,15 @@ class ExtendedPluginBase(CMSPluginBase):
     use getattr calls for some of the fields such as 
     form/formfields
     """
-
+    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.form = self.get_form_class()
+        if hasattr(settings, f"{self.get_class_name()}_FORM"):
+            self.form = self.get_form_class()
+
+    def get_form_class(self):
+        return import_string(getattr(settings, f"{self.get_class_name()}_FORM"))
 
     @classmethod
-    def get_form_class(cls):
-        return import_string(getattr(settings, f"{cls.__name__.upper()}_FORM", None))
+    def get_class_name(cls):
+        return cls.__name__.upper()
