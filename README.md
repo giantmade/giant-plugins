@@ -50,6 +50,13 @@ SUMMERNOTE_CONFIG = (
 
 ```
 
+In order to specify a form to use for a specific plugin you should add something like this to your settings file:
+
+```
+<PLUGIN_NAME>_FORM = "<path.to.form.FormClass>"
+```
+
+Where PLUGIN_NAME is the capitalised name of the plugin (e.g `TEXTWITHIMAGEPLUGIN_FORM`) and the path to the form class as a string so it can be imported.
 
  ## Preparing for release
  
