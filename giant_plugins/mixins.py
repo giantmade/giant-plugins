@@ -1,9 +1,10 @@
+from cms.plugin_pool import CMSPluginBase
 from django.utils.module_loading import import_string
 
 from django.conf import settings
 
 
-class ExtendedPluginBase(ExtendedPluginBase):
+class ExtendedPluginBase(CMSPluginBase):
     """
     An extension of the plugin base to allow us to
     use getattr calls for some of the fields such as 
