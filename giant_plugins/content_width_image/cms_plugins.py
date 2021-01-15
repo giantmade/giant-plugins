@@ -1,4 +1,6 @@
-from cms.plugin_pool import CMSPluginBase, plugin_pool
+from cms.plugin_pool import plugin_pool
+
+from giant_plugins.mixins import ExtendedPluginBase
 
 from . import models
 
@@ -6,7 +8,7 @@ __all__ = ["ContentWidthImagePlugin"]
 
 
 @plugin_pool.register_plugin
-class ContentWidthImagePlugin(CMSPluginBase):
+class ContentWidthImagePlugin(ExtendedPluginBase):
     """
     Image plugin
     """

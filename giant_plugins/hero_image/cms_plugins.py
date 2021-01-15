@@ -1,5 +1,6 @@
-from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
+
+from giant_plugins.mixins import ExtendedPluginBase
 
 from . import models
 
@@ -7,7 +8,7 @@ __all__ = ["HeroImagePlugin"]
 
 
 @plugin_pool.register_plugin
-class HeroImagePlugin(CMSPluginBase):
+class HeroImagePlugin(ExtendedPluginBase):
     """
     CMS plugin for the Image Hero model
     """
