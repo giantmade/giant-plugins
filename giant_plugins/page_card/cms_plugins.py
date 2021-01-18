@@ -1,5 +1,6 @@
-from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
+
+from giant_plugins.mixins import ExtendedPluginBase
 
 from . import models
 
@@ -7,7 +8,7 @@ __all__ = ["PageCardBlockPlugin", "PageCardPlugin"]
 
 
 @plugin_pool.register_plugin
-class PageCardBlockPlugin(CMSPluginBase):
+class PageCardBlockPlugin(ExtendedPluginBase):
     """
     Plugin for the page card block model
     """
@@ -20,7 +21,7 @@ class PageCardBlockPlugin(CMSPluginBase):
 
 
 @plugin_pool.register_plugin
-class PageCardPlugin(CMSPluginBase):
+class PageCardPlugin(ExtendedPluginBase):
     """
     Plugin for page card model
     """

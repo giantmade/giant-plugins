@@ -1,5 +1,6 @@
-from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
+
+from giant_plugins.mixins import ExtendedPluginBase
 
 from . import models
 
@@ -7,7 +8,7 @@ __all__ = ["PullQuotePlugin", "PullQuoteBlockPlugin"]
 
 
 @plugin_pool.register_plugin
-class PullQuoteBlockPlugin(CMSPluginBase):
+class PullQuoteBlockPlugin(ExtendedPluginBase):
     """
     Plugin base for the quote block
     """
@@ -20,7 +21,7 @@ class PullQuoteBlockPlugin(CMSPluginBase):
 
 
 @plugin_pool.register_plugin
-class PullQuotePlugin(CMSPluginBase):
+class PullQuotePlugin(ExtendedPluginBase):
     """
     Plugin base for pull quote model
     """
@@ -28,4 +29,3 @@ class PullQuotePlugin(CMSPluginBase):
     model = models.PullQuote
     name = "Pull Quote"
     render_template = "plugins/pullquote/item.html"
-
