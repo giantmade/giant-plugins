@@ -23,8 +23,8 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
-giant-mixins = "^0.2"
-django-filer = "^1.7.1"
+giant-mixins = "*"
+django-filer = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
