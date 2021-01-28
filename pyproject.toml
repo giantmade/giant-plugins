@@ -24,7 +24,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.6"
 giant-mixins = "*"
-django-filer = "*"
+django-filer = "^1.7.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
