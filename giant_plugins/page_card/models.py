@@ -37,7 +37,7 @@ class PageCard(CMSPlugin, URLMixin):
     summary = models.CharField(
         max_length=140, blank=True, help_text="Limited to 140 characters"
     )
-    image = FilerImageField(related_name="+", on_delete=models.SET_NULL, null=True)
+    image = FilerImageField(related_name="+", on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         """
