@@ -14,12 +14,24 @@ class PageCardBlock(CMSPlugin):
     LAYOUT_STACKED = "stacked"
     LAYOUT_LEFT_RIGHT = "left_right"
     LAYOUT_CHOICES = ((LAYOUT_STACKED, "Stacked"), (LAYOUT_LEFT_RIGHT, "Left/Right"))
+    
+    THEME_FULL_WIDTH = "full-width"
+    THEME_CONTENT_WIDTH = "content-width"
+    THEME_CHOICES = ((THEME_FULL_WIDTH, "Full width"), (THEME_CONTENT_WIDTH, "Content width"))
+
+    BG_COLOUR_DARK = "dark"
+    BG_COLOUR_LIGHT = "light"
+    BG_COLOUR_CHOICES = ((BG_COLOUR_DARK, "Dark"), (BG_COLOUR_LIGHT, "Light"))
 
     layout = models.CharField(
         max_length=255, choices=LAYOUT_CHOICES, default=LAYOUT_LEFT_RIGHT
     )
 
     title = RichTextField(blank=True)
+    theme = models.CharField(max_length=50, choices=THEME_CHOICES, default=THEME_CONTENT_WIDTH)
+    background_colour = models.CharField(
+        max_length=30, choices=BG_COLOUR_CHOICES, default=BG_COLOUR_LIGHT
+    )
 
     def __str__(self):
         """
