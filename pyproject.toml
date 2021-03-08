@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "giant-plugins"
-version = "0.3.4"
+version = "0.4.0"
 description = "Adds a generic list of plugins for use within projects"
 authors = ["Will-Hoey <will.hoey@giantmade.com>"]
 license = "MIT"
@@ -39,6 +39,28 @@ six = "^1.15.0"
 name = "TestPyPi"
 url = "https://test.pypi.org/simple/"
 secondary = true
+
+[tool.black]
+line-length = 99
+target-version = ['py36']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.ipython
+  | \.mypy_cache
+  | \.ropeproject
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | migrations
+)/
+'''
 
 [build-system]
 requires = ["poetry>=0.12"]

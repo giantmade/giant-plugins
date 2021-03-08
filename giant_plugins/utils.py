@@ -34,9 +34,7 @@ class SummernoteWidget(Textarea):
     def __init__(self, attrs=None, editor_options=None):
         super().__init__(attrs)
         self.editor_options = (
-            editor_options
-            or get_setting("WYSIWYG_CONFIG")
-            or get_setting("SUMMERNOTE_CONFIG")
+            editor_options or get_setting("WYSIWYG_CONFIG") or get_setting("SUMMERNOTE_CONFIG")
         )
 
     def render(self, name, value, attrs=None, renderer=None):
@@ -48,9 +46,7 @@ class SummernoteWidget(Textarea):
             cls + " uninitialised wysiwyg-init" if cls else "uninitialised wysiwyg-init"
         )
         final_attrs = self.build_attrs(self.attrs, attrs, name=name)
-        return mark_safe(
-            f"<textarea{flatatt(final_attrs)}>\r\n{force_text(value)}</textarea>"
-        )
+        return mark_safe(f"<textarea{flatatt(final_attrs)}>\r\n{force_text(value)}</textarea>")
 
     def build_attrs(self, base_attrs, extra_attrs=None, **kwargs):
         """

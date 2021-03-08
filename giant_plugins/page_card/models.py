@@ -23,9 +23,7 @@ class PageCardBlock(CMSPlugin):
     BG_COLOUR_LIGHT = "light"
     BG_COLOUR_CHOICES = ((BG_COLOUR_DARK, "Dark"), (BG_COLOUR_LIGHT, "Light"))
 
-    layout = models.CharField(
-        max_length=255, choices=LAYOUT_CHOICES, default=LAYOUT_LEFT_RIGHT
-    )
+    layout = models.CharField(max_length=255, choices=LAYOUT_CHOICES, default=LAYOUT_LEFT_RIGHT)
 
     title = RichTextField(blank=True)
     theme = models.CharField(max_length=50, choices=THEME_CHOICES, default=THEME_CONTENT_WIDTH)
