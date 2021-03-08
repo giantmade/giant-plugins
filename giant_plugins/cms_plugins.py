@@ -8,6 +8,7 @@ import_list = [
     "pullquote",
     "rich_text",
     "hero_image",
+    "donate",
 ]
 
 for plugin in import_list:
