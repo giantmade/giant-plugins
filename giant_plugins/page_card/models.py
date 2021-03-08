@@ -15,9 +15,7 @@ class PageCardBlock(CMSPlugin):
     LAYOUT_LEFT_RIGHT = "left_right"
     LAYOUT_CHOICES = ((LAYOUT_STACKED, "Stacked"), (LAYOUT_LEFT_RIGHT, "Left/Right"))
 
-    layout = models.CharField(
-        max_length=255, choices=LAYOUT_CHOICES, default=LAYOUT_LEFT_RIGHT
-    )
+    layout = models.CharField(max_length=255, choices=LAYOUT_CHOICES, default=LAYOUT_LEFT_RIGHT)
 
     title = RichTextField(blank=True)
 
@@ -34,9 +32,7 @@ class PageCard(CMSPlugin, URLMixin):
     """
 
     title = models.CharField(max_length=255)
-    summary = models.CharField(
-        max_length=140, blank=True, help_text="Limited to 140 characters"
-    )
+    summary = models.CharField(max_length=140, blank=True, help_text="Limited to 140 characters")
     image = FilerImageField(related_name="+", on_delete=models.SET_NULL, null=True)
 
     def __str__(self):

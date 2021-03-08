@@ -10,17 +10,10 @@ class ContentWidthImage(CMSPlugin):
     """
 
     image = FilerImageField(
-        related_name="+",
-        verbose_name="Content Width Image",
-        on_delete=models.SET_NULL,
-        null=True,
+        related_name="+", verbose_name="Content Width Image", on_delete=models.SET_NULL, null=True,
     )
-    alt_text = models.CharField(
-        max_length=64, help_text="Image name", blank=True, null=True
-    )
-    caption = models.CharField(
-        max_length=255, help_text="Add a caption to the image", blank=True
-    )
+    alt_text = models.CharField(max_length=64, help_text="Image name", blank=True, null=True)
+    caption = models.CharField(max_length=255, help_text="Add a caption to the image", blank=True)
 
     def __str__(self):
         """
