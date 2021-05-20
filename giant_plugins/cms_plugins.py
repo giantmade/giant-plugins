@@ -9,6 +9,7 @@ import_list = [
     "rich_text",
     "hero_image",
     "donate",
+    "featured_cta",
 ]
 
 for plugin in import_list:
