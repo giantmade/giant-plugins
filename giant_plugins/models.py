@@ -6,3 +6,5 @@ from .pullquote.models import *
 from .rich_text.models import *
 from .hero_image.models import *
 from .donate.models import *
+from .logo_grid.models import *
+from .featured_cta.models import *

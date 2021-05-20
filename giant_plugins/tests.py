@@ -6,3 +6,5 @@ from .pullquote.tests import *
 from .rich_text.tests import *
 from .hero_image.tests import *
 from .donate.tests import *
+from .featured_cta.tests import *
+from .logo_grid.tests import *
