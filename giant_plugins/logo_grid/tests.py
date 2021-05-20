@@ -18,13 +18,6 @@ class TestLogoModels:
         plugin = models.LogoCard(pk=1)
         assert str(plugin) == "Logo card 1"
 
-    def test_absolute_url_no_link(self):
-        """
-        Test bool is false when no link is set
-        """
-        plugin = models.LogoCard()
-        assert plugin.get_absolute_url() == ""
-        assert bool(plugin.get_absolute_url()) is False
 
     def test_absolute_url_link(self):
         """
