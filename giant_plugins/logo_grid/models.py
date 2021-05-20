@@ -10,7 +10,7 @@ class LogoBlock(CMSPlugin):
     Model for the Client block plugin.
     """
 
-    title = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         """
