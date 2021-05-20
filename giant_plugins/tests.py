@@ -8,3 +8,4 @@ from .hero_image.tests import *
 from .donate.tests import *
 from .featured_cta.tests import *
 from .logo_grid.tests import *
+from .share_this_page.tests import *
