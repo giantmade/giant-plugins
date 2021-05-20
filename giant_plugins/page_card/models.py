@@ -14,7 +14,7 @@ class PageCardBlock(CMSPlugin):
     LAYOUT_STACKED = "stacked"
     LAYOUT_LEFT_RIGHT = "left_right"
     LAYOUT_CHOICES = ((LAYOUT_STACKED, "Stacked"), (LAYOUT_LEFT_RIGHT, "Left/Right"))
-    
+
     THEME_FULL_WIDTH = "full-width"
     THEME_CONTENT_WIDTH = "content-width"
     THEME_CHOICES = ((THEME_FULL_WIDTH, "Full width"), (THEME_CONTENT_WIDTH, "Content width"))
@@ -44,9 +44,7 @@ class PageCard(CMSPlugin, URLMixin):
     """
 
     title = models.CharField(max_length=255)
-    summary = models.CharField(
-        max_length=140, blank=True, help_text="Limited to 140 characters"
-    )
+    summary = models.CharField(max_length=140, blank=True, help_text="Limited to 140 characters")
     image = FilerImageField(related_name="+", on_delete=models.SET_NULL, null=True, blank=True)
     cta_text = models.CharField(max_length=50, default="Read more")
 
