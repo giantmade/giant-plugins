@@ -8,3 +8,4 @@ from .hero_image.models import *
 from .donate.models import *
 from .logo_grid.models import *
 from .featured_cta.models import *
+from .share_this_page.models import *

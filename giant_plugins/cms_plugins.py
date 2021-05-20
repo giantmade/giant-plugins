@@ -11,6 +11,7 @@ import_list = [
     "donate",
     "featured_cta",
     "logo_grid",
+    "share_this_page",
 ]
 
 for plugin in import_list:
