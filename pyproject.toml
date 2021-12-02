@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "giant-plugins"
-version = "0.6.3"
+version = "0.6.4"
 description = "Adds a generic list of plugins for use within projects"
 authors = ["Will-Hoey <will.hoey@giantmade.com>"]
 license = "MIT"
@@ -24,7 +24,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.6"
 django-filer = "*"
-giant-mixins = "^0.3.2"
+giant-mixins = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
