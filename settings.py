@@ -20,6 +20,9 @@ PLUGINS = [
     "giant_plugins.pullquote",
     "giant_plugins.rich_text",
     "giant_plugins.share_this_page",
+    "giant_plugins.gallery",
+    "giant_plugins.key_stats",
+    "giant_plugins.multilink",
 ]
 
 INSTALLED_APPS = [
