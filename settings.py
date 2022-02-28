@@ -21,6 +21,7 @@ PLUGINS = [
     "giant_plugins.rich_text",
     "giant_plugins.share_this_page",
     "giant_plugins.gallery",
+    "giant_plugins.key_stats",
 ]
 
 INSTALLED_APPS = [
