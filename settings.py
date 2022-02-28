@@ -9,6 +9,18 @@ DATABASES = {
     }
 }
 
+PLUGINS = [
+    "giant_plugins.content_width_image",
+    "giant_plugins.content_width_video",
+    "giant_plugins.donate",
+    "giant_plugins.featured_cta",
+    "giant_plugins.hero_image",
+    "giant_plugins.logo_grid",
+    "giant_plugins.page_card",
+    "giant_plugins.pullquote",
+    "giant_plugins.rich_text",
+    "giant_plugins.share_this_page",
+]
 
 INSTALLED_APPS = [
     "cms",
@@ -27,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "mixins",
     "giant_plugins",
-]
+] + PLUGINS
 
 TEMPLATES = [
     {

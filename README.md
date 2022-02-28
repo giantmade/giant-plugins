@@ -5,23 +5,55 @@ A re-usable package which can be used in any project that requires a base set of
 This will include a small set of plugins that are used in a large number of projects, but will not necessarily cover the full requirements. It will also provide a RichText field which can be used in other areas of the project
 The RichText field uses ![summernote](https://github.com/summernote/summernote/) for styling the WYSIWYG widget.
 
+
+Supported Django versions:
+
+- Django 2.2, 3.2
+
+Supported django CMS versions:
+
+- django CMS 3.8, 3.9
+
+> &#x26a0;&#xfe0f; Release 1.0.0 and above are NOT compatible with
+> versions < 1 due to model name changes and a migration reset. Only upgrade to
+> this version if you are aware of what changes need to be made
+
 ## Installation
 
 To install with the package manager, run:
 
     $ poetry add giant-plugins
 
-You should then add `"giant_plugins"` to the `INSTALLED_APPS` in `base.py`.  
+You should then add `"giant_plugins"` to the `INSTALLED_APPS` in `base.py`. Move to "C 
 
-In order to run `django-admin` commands you will need to set the `DJANGO_SETTINGS_MODULE` by running
+The structure of these files is slightly different than the norm, allowing for more control
+over which plugins are added to the Django project. In order to add the plugins it is
+advised to create a `PLUGINS` variable in your settings file which will be appended to the
+`INSTALLED_APPS`. The following snippet will install all of the currently available plugins (note that this should be tweaked to suit your needs):
 
-    $ export DJANGO_SETTINGS_MODULE=settings
+```
+PLUGINS = [
+    "giant_plugins.content_width_image",
+    "giant_plugins.content_width_video",
+    "giant_plugins.donate",
+    "giant_plugins.featured_cta",
+    "giant_plugins.hero_image",
+    "giant_plugins.logo_grid",
+    "giant_plugins.page_card",
+    "giant_plugins.pullquote",
+    "giant_plugins.rich_text",
+    "giant_plugins.share_this_page",
+]
+
+
+INSTALLED_APPS = [...] + PLUGINS
+```
+Once these have been added as such you can now run the `migrate` command and create the tables for the
+installed plugins.
 
 ## Configuration
 
-This application exposes the following settings:
-
-`SUMMERNOTE_CONFIG` which allows the user to configure a set of options for the redactor. For example the settings below will give you a basic setup,
+If you do not have a default WYSIWYG config then you can use the following settings:
 
 ```
 SUMMERNOTE_CONFIG = (
@@ -56,6 +88,17 @@ In order to specify a form to use for a specific plugin you should add something
 ```
 
 Where PLUGIN_NAME is the capitalised name of the plugin (e.g `TEXTWITHIMAGEPLUGIN_FORM`) and the path to the form class as a string so it can be imported.
+
+## Local development
+
+In order to run `django-admin` commands you will need to set the `DJANGO_SETTINGS_MODULE` variable by running
+
+    $ export DJANGO_SETTINGS_MODULE=settings
+
+When adding a plugin you should add the new plugin to the `PLUGINS` variable in your settings file
+and to this README.
+
+
 
  ## Preparing for release
  
