@@ -11,17 +11,36 @@ To install with the package manager, run:
 
     $ poetry add giant-plugins
 
-You should then add `"giant_plugins"` to the `INSTALLED_APPS` in `base.py`.  
+You should then add `"giant_plugins"` to the `INSTALLED_APPS` in `base.py`. Move to "C 
 
-In order to run `django-admin` commands you will need to set the `DJANGO_SETTINGS_MODULE` by running
+The structure of these files is slightly different than the norm, allowing for for more control
+over which plugins are added to the Django project. In order to add the plugins into the it is
+advised to create a `PLUGINS` variable in your settings file which will be appended to the
+`INSTALLED_APPS`. The following snippet will install all of the currently available plugins (note that this should be tweaked to suit your needs):
 
-    $ export DJANGO_SETTINGS_MODULE=settings
+```
+PLUGINS = [
+    "giant_plugins.content_width_image",
+    "giant_plugins.content_width_video",
+    "giant_plugins.donate",
+    "giant_plugins.featured_cta",
+    "giant_plugins.hero_image",
+    "giant_plugins.logo_grid",
+    "giant_plugins.page_card",
+    "giant_plugins.pullquote",
+    "giant_plugins.rich_text",
+    "giant_plugins.share_this_page",
+]
+
+
+INSTALLED_APPS = [...] + PLUGINS
+```
+Once these have been added as such you can now run the `migrate` command and the tables for the
+installed plugins.
 
 ## Configuration
 
-This application exposes the following settings:
-
-`SUMMERNOTE_CONFIG` which allows the user to configure a set of options for the redactor. For example the settings below will give you a basic setup,
+If you do not have a default WYSIWYG config then you can use the following settings then you can use the one supplied below:
 
 ```
 SUMMERNOTE_CONFIG = (
@@ -56,6 +75,17 @@ In order to specify a form to use for a specific plugin you should add something
 ```
 
 Where PLUGIN_NAME is the capitalised name of the plugin (e.g `TEXTWITHIMAGEPLUGIN_FORM`) and the path to the form class as a string so it can be imported.
+
+## Local development
+
+In order to run `django-admin` commands you will need to set the `DJANGO_SETTINGS_MODULE` by running
+
+    $ export DJANGO_SETTINGS_MODULE=settings
+
+When adding a plugin you should add the new pluging to the `PLUGINS` variable in your settings file
+and to this README.
+
+
 
  ## Preparing for release
  
