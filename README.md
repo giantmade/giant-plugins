@@ -26,8 +26,8 @@ To install with the package manager, run:
 
 You should then add `"giant_plugins"` to the `INSTALLED_APPS` in `base.py`. Move to "C 
 
-The structure of these files is slightly different than the norm, allowing for for more control
-over which plugins are added to the Django project. In order to add the plugins into the it is
+The structure of these files is slightly different than the norm, allowing for more control
+over which plugins are added to the Django project. In order to add the plugins it is
 advised to create a `PLUGINS` variable in your settings file which will be appended to the
 `INSTALLED_APPS`. The following snippet will install all of the currently available plugins (note that this should be tweaked to suit your needs):
 
@@ -48,12 +48,12 @@ PLUGINS = [
 
 INSTALLED_APPS = [...] + PLUGINS
 ```
-Once these have been added as such you can now run the `migrate` command and the tables for the
+Once these have been added as such you can now run the `migrate` command and create the tables for the
 installed plugins.
 
 ## Configuration
 
-If you do not have a default WYSIWYG config then you can use the following settings then you can use the one supplied below:
+If you do not have a default WYSIWYG config then you can use the following settings:
 
 ```
 SUMMERNOTE_CONFIG = (
@@ -91,11 +91,11 @@ Where PLUGIN_NAME is the capitalised name of the plugin (e.g `TEXTWITHIMAGEPLUGI
 
 ## Local development
 
-In order to run `django-admin` commands you will need to set the `DJANGO_SETTINGS_MODULE` by running
+In order to run `django-admin` commands you will need to set the `DJANGO_SETTINGS_MODULE` variable by running
 
     $ export DJANGO_SETTINGS_MODULE=settings
 
-When adding a plugin you should add the new pluging to the `PLUGINS` variable in your settings file
+When adding a plugin you should add the new plugin to the `PLUGINS` variable in your settings file
 and to this README.
 
 
