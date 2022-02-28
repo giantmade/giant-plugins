@@ -5,6 +5,19 @@ A re-usable package which can be used in any project that requires a base set of
 This will include a small set of plugins that are used in a large number of projects, but will not necessarily cover the full requirements. It will also provide a RichText field which can be used in other areas of the project
 The RichText field uses ![summernote](https://github.com/summernote/summernote/) for styling the WYSIWYG widget.
 
+
+Supported Django versions:
+
+- Django 2.2, 3.2
+
+Supported django CMS versions:
+
+- django CMS 3.8, 3.9
+
+> &#x26a0;&#xfe0f; Release 1.0.0 and above are NOT compatible with
+> versions < 1 due to model name changes and a migration reset. Only upgrade to
+> this version if you are aware of what changes need to be made
+
 ## Installation
 
 To install with the package manager, run:
