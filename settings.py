@@ -20,6 +20,7 @@ PLUGINS = [
     "giant_plugins.pullquote",
     "giant_plugins.rich_text",
     "giant_plugins.share_this_page",
+    "giant_plugins.gallery",
 ]
 
 INSTALLED_APPS = [
