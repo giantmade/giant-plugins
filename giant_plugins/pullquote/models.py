@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext as _
 from filer.fields.image import FilerImageField
+from giant_plugins.utils import RichTextField
 
 from cms.models import CMSPlugin
 
@@ -18,7 +19,12 @@ class PullQuote(CMSPlugin):
     Model for a pull quote plugin
     """
 
-    quote = models.TextField()
+    LAYOUT_RIGHT = "right"
+    LAYOUT_LEFT = "left"
+    LAYOUT_CHOICES = ((LAYOUT_RIGHT, "Right"), (LAYOUT_LEFT, "Left"))
+
+    layout = models.CharField(max_length=255, choices=LAYOUT_CHOICES, default=LAYOUT_RIGHT)
+    quote = RichTextField()
     caption = models.CharField(max_length=255, blank=True)
     image = FilerImageField(
         related_name="+",
