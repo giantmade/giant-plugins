@@ -19,11 +19,15 @@ class PullQuote(CMSPlugin):
     Model for a pull quote plugin
     """
 
-    LAYOUT_RIGHT = "right"
-    LAYOUT_LEFT = "left"
-    LAYOUT_CHOICES = ((LAYOUT_RIGHT, "Right"), (LAYOUT_LEFT, "Left"))
+    TEXT_SIDE_RIGHT = "right"
+    TEXT_SIDE_LEFT = "left"
+    TEXT_SIDE_CHOICES = ((TEXT_SIDE_RIGHT, "Right"), (TEXT_SIDE_LEFT, "Left"))
 
-    layout = models.CharField(max_length=255, choices=LAYOUT_CHOICES, default=LAYOUT_RIGHT)
+    text_side = models.CharField(
+        max_length=255,
+        choices=TEXT_SIDE_CHOICES,
+        default=TEXT_SIDE_RIGHT
+    )
     quote = RichTextField()
     caption = models.CharField(max_length=255, blank=True)
     image = FilerImageField(
