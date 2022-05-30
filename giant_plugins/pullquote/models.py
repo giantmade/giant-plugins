@@ -35,7 +35,7 @@ class PullQuote(CMSPlugin):
         blank=True,
         null=True,
         help_text="Choose an optional image",
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
     )
 
     def __str__(self):

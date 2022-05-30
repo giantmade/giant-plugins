@@ -24,7 +24,7 @@ class LogoCard(CMSPlugin, URLMixin):
     Model for the client card plugin
     """
 
-    logo = FilerImageField(related_name="company_logo", on_delete=models.CASCADE)
+    logo = FilerImageField(related_name="company_logo", null=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
