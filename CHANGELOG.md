@@ -1,4 +1,4 @@
-## 1.0.1
+## 1.0.2
 - Change pullqoute and logo grid image fields on_delete value to set_null
 
 ## 1.0.1
