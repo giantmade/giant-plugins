@@ -14,6 +14,7 @@ class ContentWidthImage(CMSPlugin):
     )
     alt_text = models.CharField(max_length=64, help_text="Image name", blank=True, default="")
     caption = models.CharField(max_length=255, help_text="Add a caption to the image", blank=True)
+    credit = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         """
