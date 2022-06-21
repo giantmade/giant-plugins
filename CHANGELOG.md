@@ -1,3 +1,7 @@
+## 1.0.4
+- Make "caption" field on content width video plugin mandatory
+- Make "credit" and "credit" fields on content width image plugin mandatory
+
 ## 1.0.3
 - Add "caption" field to content width video plugin
 - Add "credit" field to content width image plugin

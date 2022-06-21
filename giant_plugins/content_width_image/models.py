@@ -13,8 +13,8 @@ class ContentWidthImage(CMSPlugin):
         related_name="+", verbose_name="Content Width Image", on_delete=models.SET_NULL, null=True,
     )
     alt_text = models.CharField(max_length=64, help_text="Image name", blank=True, default="")
-    caption = models.CharField(max_length=255, help_text="Add a caption to the image", blank=True)
-    credit = models.CharField(max_length=255, blank=True)
+    caption = models.CharField(max_length=255, help_text="Add a caption to the image")
+    credit = models.CharField(max_length=255)
 
     def __str__(self):
         """
