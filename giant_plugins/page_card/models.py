@@ -43,7 +43,7 @@ class PageCard(CMSPlugin, URLMixin):
     A model for an individual page card
     """
 
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, blank=True)
     summary = models.CharField(max_length=140, blank=True, help_text="Limited to 140 characters")
     image = FilerImageField(related_name="+", on_delete=models.SET_NULL, null=True, blank=True)
     cta_text = models.CharField(max_length=50, default="Read more")
