@@ -1,3 +1,6 @@
+## 1.0.5
+- Make "title" field on page card child plugin optional
+
 ## 1.0.4
 - Make "caption" field on content width video plugin mandatory
 - Make "credit" and "credit" fields on content width image plugin mandatory
