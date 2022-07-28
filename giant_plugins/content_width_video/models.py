@@ -17,7 +17,6 @@ class ContentWidthVideo(CMSPlugin, VideoURLMixin):
     )
     title = models.CharField(max_length=128, blank=True)
     caption = models.CharField(max_length=128)
-    alt_title = models.CharField(max_length=128, blank=True, default="")
     alt_text = models.CharField(max_length=128, blank=True, default="")
     display_image = models.BooleanField(default=True)
 
