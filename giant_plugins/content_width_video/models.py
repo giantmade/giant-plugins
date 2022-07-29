@@ -1,3 +1,5 @@
+from urllib.parse import parse_qs, urlparse
+
 from cms.models import CMSPlugin
 from django.db import models
 from filer.fields.image import FilerImageField
