@@ -32,8 +32,11 @@ class ContentWidthVideo(CMSPlugin, VideoURLMixin):
         """
         Return the youtube video ID
         """
-        youtube_id = parse_qs(urlparse(self.youtube_url).query)["v"][0]
-        return youtube_id
+        try:
+            youtube_id = parse_qs(urlparse(self.youtube_url).query)["v"][0]
+            return youtube_id
+        except KeyError:
+            return ""
 
     def fallback_thumbnail(self):
         """
