@@ -1,5 +1,6 @@
 from urllib.parse import parse_qs, urlparse
 
+import requests
 from cms.models import CMSPlugin
 from django.db import models
 from filer.fields.image import FilerImageField
@@ -43,4 +44,8 @@ class ContentWidthVideo(CMSPlugin, VideoURLMixin):
         Returns a fallback thumbnail for the video
         """
 
-        return f"https://img.youtube.com/vi/{self.get_video_id()}/maxresdefault.jpg"
+        url = f"https://img.youtube.com/vi/{self.get_video_id()}/maxresdefault.jpg"
+        if requests.get(url).status_code == 404:
+            url = f"https://img.youtube.com/vi/{self.get_video_id()}/hqdefault.jpg"
+
+        return url
