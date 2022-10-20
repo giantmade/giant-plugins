@@ -24,7 +24,9 @@ To install with the package manager, run:
 
     $ poetry add giant-plugins
 
-You should then add `"giant_plugins"` to the `INSTALLED_APPS` in `base.py`. Move to "C 
+You should then add `"giant_plugins"` to the `INSTALLED_APPS` in `base.py`.
+
+You must also make sure that `"filer"` is in your `INSTALLED_APPS` in `base.py`.
 
 The structure of these files is slightly different than the norm, allowing for more control
 over which plugins are added to the Django project. In order to add the plugins it is
