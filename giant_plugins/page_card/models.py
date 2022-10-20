@@ -1,8 +1,8 @@
-from django.db import models
-
 from cms.models import CMSPlugin
+from django.db import models
 from filer.fields.image import FilerImageField
 from mixins.models import URLMixin
+
 from giant_plugins.utils import RichTextField
 
 
@@ -50,6 +50,16 @@ class PageCard(CMSPlugin, URLMixin):
 
     def __str__(self):
         """
-        String representation of the object
+        String representation of the object. In order of importance, try to return:
+            - title of the current page
+            - title of the page card
+            - pk
         """
-        return f"Page Card #{self.pk}"
+        _identifier = self.title or f"#{self.pk}"
+
+        if self._page:
+            page_title = self._page.get_page_title()
+            if page_title:
+                _identifier = page_title
+
+        return f"Page Card for {_identifier}"
