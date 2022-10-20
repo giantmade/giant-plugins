@@ -1,3 +1,8 @@
+## 1.0.8
+- Improve PageCard str method by showing the title of the internal page if it's present, failing
+  that show the title or the pk
+- Add a few methods to determine if the Internal Page associated with a PageCard is published
+
 ## 1.0.5
 - Make "title" field on page card child plugin optional
 

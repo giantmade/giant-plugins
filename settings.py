@@ -44,10 +44,15 @@ INSTALLED_APPS = [
     "giant_plugins",
 ] + PLUGINS
 
+# Used for testing when creating a Page object
+CMS_TEMPLATES = [
+    ("base.html", "Default"),
+]
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ["giant_plugins/templates"],
+        "DIRS": ["giant_plugins/templates", "giant_plugins/tests/templates"],
         "OPTIONS": {
             "context_processors": [
                 "django.contrib.auth.context_processors.auth",
