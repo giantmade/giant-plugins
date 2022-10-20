@@ -63,3 +63,20 @@ class PageCard(CMSPlugin, URLMixin):
                 _identifier = page_title
 
         return f"Page Card for {_identifier}"
+
+    @property
+    def _page(self):
+        """
+        Return the internal page object associated with this PageCard
+        """
+        return self.internal_link
+
+    @property
+    def is_page_published(self):
+        """
+        Return the publish state of the Internal Page linked to this card.
+        """
+        if not self._page:
+            return False
+
+        return self._page.is_published(self._page.languages)

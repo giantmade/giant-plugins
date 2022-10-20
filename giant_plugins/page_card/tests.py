@@ -49,3 +49,23 @@ class TestPageCardModel:
     def test_str_pk(self):
         page_card = models.PageCard(pk=1)
         assert str(page_card) == "Page Card for #1"
+
+    def test_is_published(self, page_card, page_obj):
+        assert page_card.internal_link
+
+    def test_is_published_no_page(self):
+        obj = models.PageCard()
+
+        assert obj.internal_link is None
+        assert obj._page is None
+        assert obj.is_page_published is False
+
+    def test_is_published_page_published(self, page_card, page_obj):
+        assert page_card._page == page_obj
+        assert page_card.is_page_published is True
+
+    def test_is_published_page_not_published(self, page_card, page_obj, mocker):
+        mocker.patch.object(page_obj, "languages", "fr")
+
+        assert page_card._page == page_obj
+        assert page_card.is_page_published is False
