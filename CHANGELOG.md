@@ -1,4 +1,7 @@
-## 1.0.8
+## 1.0.12
+- Override PageCard form so it uses the SmartLinkWidget (select2 for internal pages)
+
+## 1.0.11
 - Improve PageCard str method by showing the title of the internal page if it's present, failing
   that show the title or the pk
 - Add a few methods to determine if the Internal Page associated with a PageCard is published
