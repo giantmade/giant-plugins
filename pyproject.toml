@@ -38,11 +38,6 @@ six = "^1.15.0"
 django-polymorphic = "3.0.0"
 pytest-mock = "<3.10"
 
-[[tool.poetry.source]]
-name = "TestPyPi"
-url = "https://test.pypi.org/simple/"
-secondary = true
-
 [tool.black]
 line-length = 99
 target-version = ['py36']
