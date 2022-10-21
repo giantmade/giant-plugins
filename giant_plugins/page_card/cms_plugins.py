@@ -1,6 +1,7 @@
 from cms.plugin_pool import plugin_pool
 
 from giant_plugins.mixins import ExtendedPluginBase
+from giant_plugins.page_card.forms import SmartLinkForm
 
 from . import models
 
@@ -31,3 +32,4 @@ class PageCardPlugin(ExtendedPluginBase):
     render_template = "plugins/page_card/item.html"
     require_parent = True
     parent_class = ["PageCardBlockPlugin"]
+    form = SmartLinkForm
