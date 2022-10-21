@@ -10,7 +10,7 @@ from giant_plugins.page_card.models import PageCard
 class SmartLinkForm(forms.ModelForm):
 
     internal_link = PageSmartLinkField(
-        placeholder="Select a page", 
+        placeholder_text="Select a page", 
         ajax_view="admin:cms_page_get_published_pagelist"
     )
     language = forms.ChoiceField(
