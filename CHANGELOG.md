@@ -1,3 +1,6 @@
+## 1.0.13
+- Remove explicit `fields` definition so we rely on `exclude` instead 
+
 ## 1.0.12
 - Override PageCard form so it uses the SmartLinkWidget (select2 for internal pages)
 
