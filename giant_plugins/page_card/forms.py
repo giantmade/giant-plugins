@@ -21,8 +21,7 @@ class SmartLinkForm(forms.ModelForm):
 
     class Meta:
         model = PageCard
-        fields = ["internal_link"]
-        exclude = ("language",)
+        exclude = ["language"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
