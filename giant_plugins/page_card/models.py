@@ -1,8 +1,8 @@
-from django.db import models
-
 from cms.models import CMSPlugin
+from django.db import models
 from filer.fields.image import FilerImageField
 from mixins.models import URLMixin
+
 from giant_plugins.utils import RichTextField
 
 
@@ -50,6 +50,33 @@ class PageCard(CMSPlugin, URLMixin):
 
     def __str__(self):
         """
-        String representation of the object
+        String representation of the object. In order of importance, try to return:
+            - title of the current page
+            - title of the page card
+            - pk
         """
-        return f"Page Card #{self.pk}"
+        _identifier = self.title or f"#{self.pk}"
+
+        if self._page:
+            page_title = self._page.get_page_title()
+            if page_title:
+                _identifier = page_title
+
+        return f"Page Card for {_identifier}"
+
+    @property
+    def _page(self):
+        """
+        Return the internal page object associated with this PageCard
+        """
+        return self.internal_link
+
+    @property
+    def is_page_published(self):
+        """
+        Return the publish state of the Internal Page linked to this card.
+        """
+        if not self._page:
+            return False
+
+        return self._page.is_published(self._page.languages)
