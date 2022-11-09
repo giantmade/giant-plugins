@@ -1,3 +1,6 @@
+## 1.0.15
+- Revert changes made in 1.0.12 due to error when assiging internal link.
+
 ## 1.0.13
 - Remove explicit `fields` definition so we rely on `exclude` instead 
 
