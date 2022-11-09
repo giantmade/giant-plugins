@@ -32,4 +32,3 @@ class PageCardPlugin(ExtendedPluginBase):
     render_template = "plugins/page_card/item.html"
     require_parent = True
     parent_class = ["PageCardBlockPlugin"]
-    form = SmartLinkForm
