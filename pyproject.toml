@@ -22,20 +22,20 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.6, <4.0"
+python = ">=3.6.2, <4.0"
 django-filer = "*"
 giant-mixins = "*"
 requests = "*"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
-black = "^19.10b0"
-django-cms = "^3.7.2"
-django = "2.2"
-pytest-cov = "^2.10.0"
-pytest-django = "^3.9.0"
-six = "^1.15.0"
-django-polymorphic = "3.0.0"
+pytest = "~7"
+black = "~22"
+django-cms = "~3"
+django = "~3"
+pytest-cov = "~4"
+pytest-django = "~3"
+six = "~1"
+django-polymorphic = "~3"
 pytest-mock = "<3.10"
 
 [tool.black]
