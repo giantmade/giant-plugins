@@ -22,7 +22,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.6.2, <4.0"
+python = "^3.9"
 django-filer = "*"
 giant-mixins = "*"
 requests = "*"
