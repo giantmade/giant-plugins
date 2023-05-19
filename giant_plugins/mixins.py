@@ -7,7 +7,7 @@ from django.conf import settings
 class ExtendedPluginBase(CMSPluginBase):
     """
     An extension of the plugin base to allow us to
-    use getattr calls for some of the fields such as 
+    use getattr calls for some of the fields such as
     form/formfields
     """
 
