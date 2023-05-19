@@ -1,3 +1,6 @@
+## 1.0.16
+- Added cta option for rich text plugin.
+
 ## 1.0.15
 - Revert changes made in 1.0.12 due to error when assiging internal link.
 

@@ -22,6 +22,9 @@ class TestDonate:
         Test the url property outputs the correctly formatted
         url
         """
-        obj = models.Donate(campaign="donate", donation_url="www.example.com",)
+        obj = models.Donate(
+            campaign="donate",
+            donation_url="www.example.com",
+        )
 
         assert obj.url == "www.example.com/donate/"

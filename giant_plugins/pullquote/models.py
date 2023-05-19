@@ -24,9 +24,7 @@ class PullQuote(CMSPlugin):
     TEXT_SIDE_CHOICES = ((TEXT_SIDE_RIGHT, "Right"), (TEXT_SIDE_LEFT, "Left"))
 
     text_side = models.CharField(
-        max_length=255,
-        choices=TEXT_SIDE_CHOICES,
-        default=TEXT_SIDE_RIGHT
+        max_length=255, choices=TEXT_SIDE_CHOICES, default=TEXT_SIDE_RIGHT
     )
     quote = RichTextField()
     caption = models.CharField(max_length=255, blank=True)

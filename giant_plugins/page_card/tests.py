@@ -7,12 +7,13 @@ from . import cms_plugins, models
 @pytest.fixture
 def page_obj():
     return create_page("Some Page Title", "base.html", "en-gb", published=True)
-    
+
 
 @pytest.fixture
 def page_card(page_obj):
     return models.PageCard.objects.create(internal_link=page_obj)
-    
+
+
 class TestPageCardPlugin:
     """
     Test case for the PageCard Plugin

@@ -4,5 +4,10 @@
         {% if instance.left_aligned %}<div class="text-block__thin">{% endif %}
             {{ instance.text|safe }}
         {% if instance.left_aligned %}</div>{% endif %}
+        {% if instance.has_cta %}
+            <div class="link-container">
+                <a class="rich-text-cta"  href="{{ instance.get_file_or_absolute_url }}">{{ instance.cta_text }}</a>
+            </div>
+        {% endif %}
     </div>
 </section>
