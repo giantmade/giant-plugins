@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "giant-plugins"
-version = "1.0.16"
+version = "1.2.0"
 description = "Adds a generic list of plugins for use within projects"
 authors = ["Will-Hoey <will.hoey@giantdigital.co.uk>"]
 license = "MIT"
@@ -31,7 +31,7 @@ requests = "*"
 pytest = "~7"
 black = "~22"
 django-cms = "~3"
-django = "~3"
+django = "~4"
 pytest-cov = "~4"
 pytest-django = "~3"
 six = "~1"

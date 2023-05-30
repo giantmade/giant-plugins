@@ -1,3 +1,6 @@
+## 1.2.0
+- For Django 4 compatibility changed django.utils.encoding.force_text to force_str
+
 ## 1.0.16
 - Added cta option for rich text plugin.
 
