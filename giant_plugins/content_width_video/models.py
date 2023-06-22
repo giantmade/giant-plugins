@@ -12,6 +12,7 @@ class ContentWidthVideo(CMSPlugin, VideoURLMixin):
     Represents a content width video object
     """
 
+    anchor_id = models.CharField(max_length=255, blank=True)
     image = FilerImageField(
         related_name="+",
         on_delete=models.SET_NULL,

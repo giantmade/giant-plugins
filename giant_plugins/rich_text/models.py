@@ -12,6 +12,7 @@ class RichText(CMSPlugin, URLMixin):
     Represents rich text block using wysiwyg editor
     """
 
+    anchor_id = models.CharField(max_length=255, blank=True)
     text = RichTextField(verbose_name="Text")
     cta_text = models.CharField(
         max_length=255, blank=True, help_text="text that will be displayed across the button."

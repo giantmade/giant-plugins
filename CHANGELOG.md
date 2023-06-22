@@ -1,3 +1,6 @@
+## 1.0.17
+- Added anchor_id field to the Content Width Video, Donate, Page Card Block, and Rich Text plugins.
+
 ## 1.0.16
 - Added cta option for rich text plugin.
 

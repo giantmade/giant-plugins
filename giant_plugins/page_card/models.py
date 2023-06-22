@@ -25,6 +25,7 @@ class PageCardBlock(CMSPlugin):
 
     layout = models.CharField(max_length=255, choices=LAYOUT_CHOICES, default=LAYOUT_LEFT_RIGHT)
 
+    anchor_id = models.CharField(max_length=255, blank=True)
     title = RichTextField(blank=True)
     theme = models.CharField(max_length=50, choices=THEME_CHOICES, default=THEME_CONTENT_WIDTH)
     background_colour = models.CharField(
