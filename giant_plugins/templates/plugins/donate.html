@@ -1,5 +1,5 @@
 {% load cms_tags %}
-<section class="donate-block">
+<section class="donate-block"{% if instace.anchor_id %} id="{{ instance.anchor_id }}"{% endif %}>
     <div class="wrapper wrapper--thin">
         {% if instance.title or instance.text %}
             <div class="donate-block__text">

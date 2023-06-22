@@ -1,6 +1,6 @@
 {% load cms_tags %}
 
-<section class="card-block card-block--{{ instance.theme }} card-block--{{ instance.background_colour }}">
+<section class="card-block card-block--{{ instance.theme }} card-block--{{ instance.background_colour }}"{% if instace.anchor_id %} id="{{ instance.anchor_id }}"{% endif %}>
     <div class="wrapper">
         {% if instance.title %}
             {{ instance.title|safe }}
