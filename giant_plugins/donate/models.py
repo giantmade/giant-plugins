@@ -8,6 +8,7 @@ class Donate(CMSPlugin):
     Plugin for a Donate element
     """
 
+    anchor_id = models.CharField(max_length=255, blank=True)
     campaign = models.CharField(max_length=255)
     donation_url = models.URLField()
     title = models.CharField(max_length=255, blank=True)
