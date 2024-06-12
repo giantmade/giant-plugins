@@ -1,3 +1,7 @@
+## 1.1
+- switch `force_text` to `force_str`
+- update Django in dependencies to 4
+
 ## 1.0.18
 - Added anchor_id field to the templates.
 

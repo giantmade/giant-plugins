@@ -1,6 +1,5 @@
 """Contains classes which are required for some of the plugins"""
 import json
-
 from typing import Optional
 
 from django.conf import settings
@@ -9,7 +8,7 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.db import models
 from django.forms import Media, Textarea
 from django.forms.utils import flatatt
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.functional import Promise
 from django.utils.safestring import mark_safe
 
@@ -22,7 +21,7 @@ def get_setting(setting: str) -> Optional[object]:
 class LazyEncoder(DjangoJSONEncoder):
     def default(self, obj):
         if isinstance(obj, Promise):
-            return force_text(obj)
+            return force_str(obj)
         return super().default(obj)
 
 
@@ -46,7 +45,7 @@ class SummernoteWidget(Textarea):
             cls + " uninitialised wysiwyg-init" if cls else "uninitialised wysiwyg-init"
         )
         final_attrs = self.build_attrs(self.attrs, attrs, name=name)
-        return mark_safe(f"<textarea{flatatt(final_attrs)}>\r\n{force_text(value)}</textarea>")
+        return mark_safe(f"<textarea{flatatt(final_attrs)}>\r\n{force_str(value)}</textarea>")
 
     def build_attrs(self, base_attrs, extra_attrs=None, **kwargs):
         """

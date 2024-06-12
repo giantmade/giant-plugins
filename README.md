@@ -1,3 +1,8 @@
+
+&#x26a0;&#xfe0f; This project is now in maintenance mode and will no longer receive new features,
+only compatibility updates.
+
+
 # Giant Plugins
 
 A re-usable package which can be used in any project that requires a base set of plugins. 
@@ -8,11 +13,11 @@ The RichText field uses ![summernote](https://github.com/summernote/summernote/)
 
 Supported Django versions:
 
-- Django 2.2, 3.2
+- Django 2.2, 3.2, 4
 
 Supported django CMS versions:
 
-- django CMS 3.8, 3.9
+- django CMS 3.8, 3.9, 3.11
 
 > &#x26a0;&#xfe0f; Release 1.0.0 and above are NOT compatible with
 > versions < 1 due to model name changes and a migration reset. Only upgrade to
