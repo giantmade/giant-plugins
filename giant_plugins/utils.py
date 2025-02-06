@@ -9,7 +9,7 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.db import models
 from django.forms import Media, Textarea
 from django.forms.utils import flatatt
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.functional import Promise
 from django.utils.safestring import mark_safe
 
@@ -22,7 +22,7 @@ def get_setting(setting: str) -> Optional[object]:
 class LazyEncoder(DjangoJSONEncoder):
     def default(self, obj):
         if isinstance(obj, Promise):
-            return force_text(obj)
+            return force_str(obj)
         return super().default(obj)
 
 
