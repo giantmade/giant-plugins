@@ -83,4 +83,5 @@ will publish the package to PyPi. You will need to enter the username and passwo
 
 - Remove deprecated force_text import from django.utils.encoding.
 - - Affects giant-plugins version: 0.6.x
+- - Branch: [Release 0.6.x](https://github.com/giantmade/giant-plugins/tree/release/0.6.x)
 - - Dependency restrictions: django = ">=4.1"
