@@ -85,3 +85,12 @@ will publish the package to PyPi. You will need to enter the username and passwo
 - - Affects giant-plugins version: 0.6.x
 - - Branch: [Release 0.6.x](https://github.com/giantmade/giant-plugins/tree/release/0.6.x)
 - - Dependency restrictions: django = ">=4.1"
+
+[2025-2-9]
+
+## Fixed
+
+- Remove deprecated django.utils.translation import ugettext as _.
+- - Affects giant-plugins version: 0.6.x
+- - Branch: [Release 0.6.x](https://github.com/giantmade/giant-plugins/tree/release/0.6.x)
+- - Dependency restrictions: django = ">=4.1"
