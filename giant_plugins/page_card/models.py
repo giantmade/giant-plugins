@@ -80,4 +80,4 @@ class PageCard(CMSPlugin, URLMixin):
         if not self._page:
             return False
 
-        return self._page.is_published(self._page.languages)
+        return bool(self._page.get_published_languages())
