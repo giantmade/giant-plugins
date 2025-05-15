@@ -24,7 +24,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.9"
 django-filer = "*"
-giant-mixins = "*"
+giant-mixins = {git = "https://github.com/giantmade/giant-mixins.git", branch = "cms4"}
 requests = "*"
 
 [tool.poetry.dev-dependencies]
